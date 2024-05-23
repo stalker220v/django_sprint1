@@ -1,23 +1,25 @@
 {% extends "base.html" %}
 {% block title %}Лента записей{% endblock %}
-    {% block content %}
-      <div class="container py-5">
-        <article>
-          <ul>
-            <li>
-              Место: {{ post.location }}
-            </li>
-            <li>
-              Дата: {{ post.date }}
-            </li>
-            <li>
-              Категория: <a href="{% url 'blog:category_posts' post.category %}"
-              >{{ post.category }}</a>
-            </li>
-          </ul>
-          <p>
+{% block content %}
+  <div class="container py-5" xmlns="http://www.w3.org/1999/html">
+    <article>
+      <ul>
+        <li>
+          Место: {{ post.location }}
+        </li>
+        <li>
+          Дата: {{ post.date }}
+        </li>
+        <li>
+          Категория: <a href="{% url 'blog:category_posts' post.category %}"
+          >{{ post.category }}</a>
+        </li>
+      </ul>
+        <p>
+          <div class="col-6">
             {{ post.text }}
-          </p>
-        </article>                
-      </div>
-    {% endblock %}
+          </div>
+        </p>
+    </article>
+  </div>
+{% endblock %}
