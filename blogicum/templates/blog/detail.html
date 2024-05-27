@@ -3,18 +3,7 @@
 {% block content %}
   <div class="container py-5" xmlns="http://www.w3.org/1999/html">
     <article>
-      <ul>
-        <li>
-          Место: {{ post.location }}
-        </li>
-        <li>
-          Дата: {{ post.date }}
-        </li>
-        <li>
-          Категория: <a href="{% url 'blog:category_posts' post.category %}"
-          >{{ post.category }}</a>
-        </li>
-      </ul>
+        {% include 'include/article_ul.html' %}
         <p>
           <div class="col-6">
             {{ post.text }}
