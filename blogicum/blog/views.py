@@ -52,8 +52,13 @@ def index(request):
 
 
 def post_detail(request, id_post):
-    template = 'blog/detail.html'
-    context = {'post': posts[id_post]}
+
+    if id_post <= len(posts)-1:
+        context = {'post': posts[id_post]}
+        template = 'blog/detail.html'
+    else:
+        template = 'blog/er404.html'
+        return render(request, template)
     return render(request, template, context)
 
 
